@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  :root {
+    --brand-green: #2a9d68; 
+    --brand-hover: #228155;
+    --text-dark: #1e293b;
+    --text-muted: #64748b;
+  }
+
+  .cv-container {
+    max-width: 8.5in;
+    margin: 0 auto;
+    padding: 0.2in;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: var(--text-dark);
+    line-height: 1.5;
+    background-color: transparent;
+  }
+
+  .cv-container a {
+    color: var(--brand-green);
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .cv-container a:hover {
+    color: var(--brand-hover);
+    text-decoration: underline;
+  }
+
+  /* Header Styles */
+  .cv-header {
+    text-align: center;
+    margin-bottom: 0.4in;
+  }
+
+  .cv-name {
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.05in;
+    margin: 0 0 0.1in 0;
+  }
+
+  .cv-contact {
+    font-size: 14px;
+    color: var(--text-muted);
+  }
+
+  .cv-contact span {
+    margin: 0 0.05in;
+  }
+
+  /* Collapsible Section Styles */
+  details {
+    margin-bottom: 0.2in;
+  }
+
+  summary.cv-section-title {
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: var(--text-dark);
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 0.05in;
+    margin-top: 0.2in;
+    cursor: pointer;
+    list-style: none; /* Removes default arrow */
+    position: relative;
+    user-select: none;
+    transition: color 0.2s ease;
+  }
+
+  summary.cv-section-title:hover {
+    color: var(--brand-green);
+  }
+
+  /* Removes default arrow in Safari/Chrome */
+  summary.cv-section-title::-webkit-details-marker {
+    display: none; 
+  }
+
+  /* Custom animated + / - icons */
+  summary.cv-section-title::after {
+    content: '+';
+    position: absolute;
+    right: 0;
+    color: var(--brand-green);
+    font-size: 22px;
+    line-height: 1;
+    font-weight: normal;
+    transition: transform 0.3s ease;
+  }
+
+  details[open] summary.cv-section-title::after {
+    content: '−';
+    transform: rotate(180deg);
+  }
+
+  .cv-section-content {
+    padding-top: 0.2in;
+    /* Adding a subtle fade-in effect when opening */
+    animation: fadeIn 0.4s ease-in-out;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-0.05in); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Entry Layout */
+  .cv-entry {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 0.2in;
+  }
+
+  .cv-entry-main {
+    flex: 1 1 5.5in;
+    padding-right: 0.2in;
+    box-sizing: border-box;
+  }
+
+  .cv-entry-meta {
+    flex: 0 0 1.5in;
+    text-align: right;
+    font-size: 14px;
+    color: var(--text-muted);
+  }
+
+  .cv-institution {
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 15px;
+    margin-bottom: 0.02in;
+  }
+
+  .cv-role {
+    font-weight: bold;
+    margin-bottom: 0.05in;
+  }
+
+  .cv-desc {
+    font-size: 14px;
+    color: #334155;
+  }
+
+  /* Specific Lists */
+  .cv-skills-list {
+    font-size: 14px;
+    margin-bottom: 0.1in;
+  }
+
+  .cv-skills-list strong {
+    text-transform: uppercase;
+  }
+
+  .cv-pubs {
+    font-size: 14px;
+    padding-left: 0.2in;
+    margin-bottom: 0.2in;
+    margin-top: 0;
+  }
+
+  .cv-pubs li {
+    margin-bottom: 0.05in;
+  }
+
+  /* Mobile responsiveness */
+  @media (max-width: 600px) {
+    .cv-entry-meta {
+      flex: 1 1 100%;
+      text-align: left;
+      margin-top: 0.05in;
+      font-style: italic;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="cv-container">
+
+  <details open>
+    <summary class="cv-section-title">Organised Conferences and Workshops</summary>
+    <div class="cv-section-content">
+      <div class="cv-entry">
+        <div class="cv-entry-main">
+          <div class="cv-institution">SIAM DS 2025</div>
+          <div class="cv-desc">Minisymposium: Recent Advances in Random Dynamical Systems</div>
+        </div>
+        <div class="cv-entry-meta">
+          Denver, CO, USA<br>May 25
+        </div>
+      </div>
+
+      <div class="cv-entry">
+        <div class="cv-entry-main">
+          <div class="cv-institution">Junior Dynamics Seminar</div>
+          <div class="cv-desc">The first Seminar series for PhD students in Dynamics to showcase their research, foster collaborations, and enhance scientific communication skills.</div>
+        </div>
+        <div class="cv-entry-meta">
+          London, UK<br>Sep 24 - Present
+        </div>
+      </div>
+    </div>
+  </details>
+
+  <details open>
+    <summary class="cv-section-title">List of (selected) Talks</summary>
+    <div class="cv-section-content">
+      <div class="cv-entry">
+        <div class="cv-entry-main">
+          <div class="cv-institution">Junior Dynamics Seminar</div>
+          <div class="cv-role">Imperial College London</div>
+          <div class="cv-desc">Conditioned Random Dynamics explained</div>
+        </div>
+        <div class="cv-entry-meta">
+          London, UK<br>Oct 24
+        </div>
+      </div>
+
+      <div class="cv-entry">
+        <div class="cv-entry-main">
+          <div class="cv-institution">Nonlinear Dynamics of Natural Systems</div>
+          <div class="cv-role">NDNS+ cluster</div>
+          <div class="cv-desc">Stochastic stability of equilibrium states</div>
+        </div>
+        <div class="cv-entry-meta">
+          Lunteren, NL<br>May 24
+        </div>
+      </div>
+
+      <div class="cv-entry">
+        <div class="cv-entry-main">
+          <div class="cv-institution">Workshop in Mathematics of Random Systems</div>
+          <div class="cv-role">University of Oxford (invited talk)</div>
+          <div class="cv-desc">Understanding noise-induced chaos with random dynamics</div>
+        </div>
+        <div class="cv-entry-meta">
+          Oxford, UK<br>Dec 23
+        </div>
+      </div>
+
+      <div class="cv-entry">
+        <div class="cv-entry-main">
+          <div class="cv-institution">Chaos</div>
+          <div class="cv-role">Nesin Matematik Köyü</div>
+          <div class="cv-desc">Conditioned stochastic stability of equilibrium measures on repellers</div>
+        </div>
+        <div class="cv-entry-meta">
+          Izmir, TR<br>Sep 23
+        </div>
+      </div>
+
+      <div class="cv-entry">
+        <div class="cv-entry-main">
+          <div class="cv-institution">10 International Congress on Industrial and Applied Mathematics</div>
+          <div class="cv-role">Wasseda University</div>
+          <div class="cv-desc">Noise-induced chaos: a conditioned random dynamics perspective</div>
+        </div>
+        <div class="cv-entry-meta">
+          Tokyo, JPN<br>Aug 23
+        </div>
+      </div>
+
+      <div class="cv-entry">
+        <div class="cv-entry-main">
+          <div class="cv-institution">Seminar on Random Dynamical Systems and Ergodic Theory</div>
+          <div class="cv-role">Imperial College London</div>
+          <div class="cv-desc">Infinite Ergodic theory and intermittency in Iterated Function Systems</div>
+        </div>
+        <div class="cv-entry-meta">
+          London, UK<br>Feb 22, Feb 23, Jan 24
+        </div>
+      </div>
+
+      <div class="cv-entry">
+        <div class="cv-entry-main">
+          <div class="cv-institution">Freie Universität Berlin (invited talk)</div>
+          <div class="cv-desc">Uncovering the <i>n</i>-point motion in stochastic flows</div>
+        </div>
+        <div class="cv-entry-meta">
+          Berlin, DEU<br>Nov 22
+        </div>
+      </div>
+
+      <div class="cv-entry">
+        <div class="cv-entry-main">
+          <div class="cv-institution">7th International Congress on Random Dynamical Systems</div>
+          <div class="cv-role">Institute of Mathematics, VAST</div>
+          <div class="cv-desc">On the nature of non-uniform synchronisation in a random logistic map</div>
+        </div>
+        <div class="cv-entry-meta">
+          Hanoi, VIE<br>Jun 22
+        </div>
+      </div>
+
+      <div class="cv-entry">
+        <div class="cv-entry-main">
+          <div class="cv-institution">Spring retreat - Mathematics of Random Systems</div>
+          <div class="cv-role">Imperial College London - University of Oxford</div>
+          <div class="cv-desc">Degeneracies in (k,n,m)-particle systems and their complexity</div>
+        </div>
+        <div class="cv-entry-meta">
+          Missenden, UK<br>Apr 22
+        </div>
+      </div>
+
+      <div class="cv-entry">
+        <div class="cv-entry-main">
+          <div class="cv-institution">Quasi-Stationary Distributions Workshop</div>
+          <div class="cv-role">Freie Universität Berlin</div>
+          <div class="cv-desc">Ulam's method in action. Approximating invariant measures, QSDs and QEDs</div>
+        </div>
+        <div class="cv-entry-meta">
+          Berlin, DEU<br>Mar 22
+        </div>
+      </div>
+    </div>
+  </details>
+
+</div>
+</body>
+</html>
