@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  :root {
+    --brand-green: #2a9d68; 
+    --brand-hover: #228155;
+    --text-dark: #1e293b;
+    --text-muted: #64748b;
+  }
+
+  .cv-container {
+    max-width: 8.5in;
+    margin: 0 auto;
+    padding: 0.2in;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: var(--text-dark);
+    line-height: 1.5;
+    background-color: transparent;
+  }
+
+  .cv-container a {
+    color: var(--brand-green);
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .cv-container a:hover {
+    color: var(--brand-hover);
+    text-decoration: underline;
+  }
+
+  /* Header Styles */
+  .cv-header {
+    text-align: center;
+    margin-bottom: 0.4in;
+  }
+
+  .cv-name {
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.05in;
+    margin: 0 0 0.1in 0;
+  }
+
+  .cv-contact {
+    font-size: 14px;
+    color: var(--text-muted);
+  }
+
+  .cv-contact span {
+    margin: 0 0.05in;
+  }
+
+  /* Collapsible Section Styles */
+  details {
+    margin-bottom: 0.2in;
+  }
+
+  summary.cv-section-title {
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: var(--text-dark);
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 0.05in;
+    margin-top: 0.2in;
+    cursor: pointer;
+    list-style: none; /* Removes default arrow */
+    position: relative;
+    user-select: none;
+    transition: color 0.2s ease;
+  }
+
+  summary.cv-section-title:hover {
+    color: var(--brand-green);
+  }
+
+  /* Removes default arrow in Safari/Chrome */
+  summary.cv-section-title::-webkit-details-marker {
+    display: none; 
+  }
+
+  /* Custom animated + / - icons */
+  summary.cv-section-title::after {
+    content: '+';
+    position: absolute;
+    right: 0;
+    color: var(--brand-green);
+    font-size: 22px;
+    line-height: 1;
+    font-weight: normal;
+    transition: transform 0.3s ease;
+  }
+
+  details[open] summary.cv-section-title::after {
+    content: '−';
+    transform: rotate(180deg);
+  }
+
+  .cv-section-content {
+    padding-top: 0.2in;
+    /* Adding a subtle fade-in effect when opening */
+    animation: fadeIn 0.4s ease-in-out;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-0.05in); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Entry Layout */
+  .cv-entry {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 0.2in;
+  }
+
+  .cv-entry-main {
+    flex: 1 1 5.5in;
+    padding-right: 0.2in;
+    box-sizing: border-box;
+  }
+
+  .cv-entry-meta {
+    flex: 0 0 1.5in;
+    text-align: right;
+    font-size: 14px;
+    color: var(--text-muted);
+  }
+
+  .cv-institution {
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 15px;
+    margin-bottom: 0.02in;
+  }
+
+  .cv-role {
+    font-weight: bold;
+    margin-bottom: 0.05in;
+  }
+
+  .cv-desc {
+    font-size: 14px;
+    color: #334155;
+  }
+
+  /* Specific Lists */
+  .cv-skills-list {
+    font-size: 14px;
+    margin-bottom: 0.1in;
+  }
+
+  .cv-skills-list strong {
+    text-transform: uppercase;
+  }
+
+  .cv-pubs {
+    font-size: 14px;
+    padding-left: 0.2in;
+    margin-bottom: 0.2in;
+    margin-top: 0;
+  }
+
+  .cv-pubs li {
+    margin-bottom: 0.05in;
+  }
+
+  /* Mobile responsiveness */
+  @media (max-width: 600px) {
+    .cv-entry-meta {
+      flex: 1 1 100%;
+      text-align: left;
+      margin-top: 0.05in;
+      font-style: italic;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="cv-container">
+
+  <div class="cv-header">
+    <h1 class="cv-name">Bernat Bassols Cornudella</h1>
+    <div class="cv-contact">
+      <a href="mailto:bassols.bernat@gmail.com">bassols.bernat@gmail.com</a>
+      <span>&bull;</span> (+34) 608 133 319 
+      <span>&bull;</span> +44 (0)77 2310 1137
+    </div>
+  </div>
+
+  <details open>
+    <summary class="cv-section-title">Education</summary>
+    <div class="cv-section-content">
+      <div class="cv-entry">
+        <div class="cv-entry-main">
+          <div class="cv-institution">Imperial College London (PhD)</div>
+          <div class="cv-role">Doctor of Philosophy - <a href="https://www.randomsystems-cdt.ac.uk" target="_blank">Mathematics of Random Systems</a>.</div>
+          <div class="cv-desc">PhD in Mathematics. Supervised by Prof Jeroen S.W. Lamb.</div>
+        </div>
+        <div class="cv-entry-meta">
+          London, UK<br>Sep 21 - Present
+        </div>
+      </div>
+
+      <div class="cv-entry">
+        <div class="cv-entry-main">
+          <div class="cv-institution">University of Oxford</div>
+          <div class="cv-role">Visiting PhD Student - Mathematics of Random Systems CDT</div>
+        </div>
+        <div class="cv-entry-meta">
+          Oxford, UK<br>Sep 21 - Oct 22
+        </div>
+      </div>
+
+      <div class="cv-entry">
+        <div class="cv-entry-main">
+          <div class="cv-institution">Imperial College London (MSc)</div>
+          <div class="cv-role">Master of Science in Applied Mathematics.</div>
+          <div class="cv-desc">Project Title: On the Random Logistic Map. Synchronisation, two-point motion and conditioned dynamics. Supervised by Prof Jeroen S.W. Lamb.</div>
+        </div>
+        <div class="cv-entry-meta">
+          London, UK<br>Sep 20 - Sep 21
+        </div>
+      </div>
+
+      <div class="cv-entry">
+        <div class="cv-entry-main">
+          <div class="cv-institution">Universitat Autònoma de Barcelona (BSc)</div>
+          <div class="cv-role">Bachelor's degree in Mathematics.</div>
+          <div class="cv-desc">Project Title: Exploring the interplay between cooperative and antagonistic interactions in replicator dynamical systems. Supervised by Dr Josep Sardanyés and Prof Ernest Fontich.</div>
+        </div>
+        <div class="cv-entry-meta">
+          Barcelona, ESP<br>Sep 15 - Jun 20
+        </div>
+      </div>
+
+      <div class="cv-entry">
+        <div class="cv-entry-main">
+          <div class="cv-institution">Universitat Autònoma de Barcelona (BSc)</div>
+          <div class="cv-role">Bachelor's degree in Physics.</div>
+          <div class="cv-desc">Project Title: All-optical modulation for nanointerferometric biosensors. Supervised by Prof Laura M. Lechuga.</div>
+        </div>
+        <div class="cv-entry-meta">
+          Barcelona, ESP<br>Sep 15 - Jun 20
+        </div>
+      </div>
+    </div>
+  </details>
+
+  <details open>
+    <summary class="cv-section-title">Professional Experience</summary>
+    <div class="cv-section-content">
+      <div class="cv-entry">
+        <div class="cv-entry-main">
+          <div class="cv-institution">Imperial College London</div>
+          <div class="cv-desc">
+            Organiser of the first junior Dynamics Seminar at Imperial.<br>
+            Graduate Teaching Assistant for Dynamical Systems (Y3, Y4 and MSc), Random Dynamical Systems and Ergodic Theory (Y3, Y4 and MSc), Deep Learning with Tensorflow (MSc), Applicable Mathematics (MSc), Differential Equations (Y2), Calculus and Applications (Y1), Introduction to University Mathematics (Y1), and LaTeX (Y1).
+          </div>
+        </div>
+        <div class="cv-entry-meta">
+          London, UK<br>Sep 24 - Present<br>Sep 21 - Present
+        </div>
+      </div>
+
+      <div class="cv-entry">
+        <div class="cv-entry-main">
+          <div class="cv-institution">University of Oxford</div>
+          <div class="cv-desc">Marker for the Mathematics Admission Test (MAT) sat by potential BSc candidates in Mathematics, Physics, Computer Science and Philosophy to the University of Oxford, Imperial College London and the University of Warwick.</div>
+        </div>
+        <div class="cv-entry-meta">
+          Oxford, UK<br>Sep 21 - Present
+        </div>
+      </div>
+
+      <div class="cv-entry">
+        <div class="cv-entry-main">
+          <div class="cv-institution">Institut Català de Nanociència i Nanotecnologia (ICN2)</div>
+          <div class="cv-desc">
+            Research technician for the European <a href="https://www.convat.eu/" target="_blank">H2020 CoNVat</a> project at the Nanobiosensors and Bioanalytical Applications Group led by Prof Laura M. Lechuga (CSIC) to design and study optical nano-biosensors for the early detection of COVID-19.<br><br>
+            Research intern at the <a href="https://nanob2a.icn2.cat" target="_blank">Nanobiosensors and Bioanalytical Applications Group</a> in ICN2, working on the early detection of pathologies with optical nano-biosensors.
+          </div>
+        </div>
+        <div class="cv-entry-meta">
+          Barcelona, ESP<br>Jan 20 - Oct 20<br><br>Jan 20 - Oct 20
+        </div>
+      </div>
+
+      <div class="cv-entry">
+        <div class="cv-entry-main">
+          <div class="cv-institution">Centre de Recerca Matemàtica (CRM)</div>
+          <div class="cv-desc">Research intern at the <a href="https://sites.google.com/site/nonlineardynamicsevolutionlab/home" target="_blank">Computational & Mathematical Biology Group, Nonlinear Dynamics and Evolution</a> under the supervision of Dr. Josep Sardanyés for the study of hypercycle dynamics and the origins of life in Theoretical ecology.</div>
+        </div>
+        <div class="cv-entry-meta">
+          Barcelona, ESP<br>Jan 20 - Jun 20
+        </div>
+      </div>
+    </div>
+  </details>
+
+  <details open>
+    <summary class="cv-section-title">Awards and Distinctions</summary>
+    <div class="cv-section-content">
+      <div class="cv-entry">
+        <div class="cv-entry-main">
+          <div class="cv-institution">Imperial College London</div>
+          <div class="cv-desc">Prize for Excellent MSc Applied Mathematics Project awarded to the highest graded project in the cohort.</div>
+        </div>
+        <div class="cv-entry-meta">
+          London, UK<br>Oct 21
+        </div>
+      </div>
+
+      <div class="cv-entry">
+        <div class="cv-entry-main">
+          <div class="cv-institution">Engineering and Physical Sciences Research Council (EPSRC)</div>
+          <div class="cv-desc">Four year scholarship for the UKRI - EPSRC CDT in Mathematics of Random Systems (EP/S023925/1) Doctoral program.</div>
+        </div>
+        <div class="cv-entry-meta">
+          London, UK<br>Apr 21
+        </div>
+      </div>
+
+      <div class="cv-entry">
+        <div class="cv-entry-main">
+          <div class="cv-institution">Fundació Catalunya La Pedrera</div>
+          <div class="cv-desc">Distinction awarded to the top 1.5% students in Catalunya.</div>
+        </div>
+        <div class="cv-entry-meta">
+          Barcelona, ESP<br>Jun 15
+        </div>
+      </div>
+
+      <div class="cv-entry">
+        <div class="cv-entry-main">
+          <div class="cv-institution">Generalitat de Catalunya - Distinció d'honor</div>
+          <div class="cv-desc">Scholarship for first year university studies from the Catalan Government.</div>
+        </div>
+        <div class="cv-entry-meta">
+          Barcelona, ESP<br>May 15
+        </div>
+      </div>
+    </div>
+  </details>
+
+  <details open>
+    <summary class="cv-section-title">Languages & Skills</summary>
+    <div class="cv-section-content">
+      <div class="cv-skills-list">
+        <strong>Programming languages:</strong> Python, Java, TensorFlow, C, Maple, MATLAB, Mathematica, GeoGebra, SageMath, R.
+      </div>
+      <div class="cv-skills-list" style="display: flex; justify-content: space-between; flex-wrap: wrap;">
+        <span><strong>English:</strong> Bilingual (C2)</span>
+        <span><strong>French:</strong> Intermediate (B2)</span>
+        <span><strong>Catalan:</strong> Native</span>
+        <span><strong>Spanish:</strong> Native</span>
+      </div>
+    </div>
+  </details>
+
+  <details open>
+    <summary class="cv-section-title">List of Publications <span style="font-size: 14px; text-transform: none; font-weight: normal;">(see <a href="https://profiles.imperial.ac.uk/bernat.bassols-cornudella20/publications" target="_blank">my Imperial online profile</a>)</span></summary>
+    <div class="cv-section-content">
+      <ul class="cv-pubs">
+        <li>[Citation text for Bassols2024-StochCondStab-II]</li>
+        <li>[Citation text for Bassols2024-StochCondStab]</li>
+        <li>[Citation text for Bassols2024-BCG]</li>
+        <li>[Citation text for Bassols2023-Chaos]</li>
+        <li>[Citation text for Bassols2022-BiMW]</li>
+        <li>[Citation text for Bassols2021-Hypercycles]</li>
+      </ul>
+    </div>
+  </details>
+
+  <details open>
+    <summary class="cv-section-title">Organised Conferences and Workshops</summary>
+    <div class="cv-section-content">
+      <div class="cv-entry">
+        <div class="cv-entry-main">
+          <div class="cv-institution">SIAM DS 2025</div>
+          <div class="cv-desc">Minisymposium: Recent Advances in Random Dynamical Systems</div>
+        </div>
+        <div class="cv-entry-meta">
+          Denver, CO, USA<br>May 25
+        </div>
+      </div>
+
+      <div class="cv-entry">
+        <div class="cv-entry-main">
+          <div class="cv-institution">Junior Dynamics Seminar</div>
+          <div class="cv-desc">The first Seminar series for PhD students in Dynamics to showcase their research, foster collaborations, and enhance scientific communication skills.</div>
+        </div>
+        <div class="cv-entry-meta">
+          London, UK<br>Sep 24 - Present
+        </div>
+      </div>
+    </div>
+  </details>
+
+  <details open>
+    <summary class="cv-section-title">List of (selected) Talks</summary>
+    <div class="cv-section-content">
+      <div class="cv-entry">
+        <div class="cv-entry-main">
+          <div class="cv-institution">Junior Dynamics Seminar</div>
+          <div class="cv-role">Imperial College London</div>
+          <div class="cv-desc">Conditioned Random Dynamics explained</div>
+        </div>
+        <div class="cv-entry-meta">
+          London, UK<br>Oct 24
+        </div>
+      </div>
+
+      <div class="cv-entry">
+        <div class="cv-entry-main">
+          <div class="cv-institution">Nonlinear Dynamics of Natural Systems</div>
+          <div class="cv-role">NDNS+ cluster</div>
+          <div class="cv-desc">Stochastic stability of equilibrium states</div>
+        </div>
+        <div class="cv-entry-meta">
+          Lunteren, NL<br>May 24
+        </div>
+      </div>
+
+      <div class="cv-entry">
+        <div class="cv-entry-main">
+          <div class="cv-institution">Workshop in Mathematics of Random Systems</div>
+          <div class="cv-role">University of Oxford (invited talk)</div>
+          <div class="cv-desc">Understanding noise-induced chaos with random dynamics</div>
+        </div>
+        <div class="cv-entry-meta">
+          Oxford, UK<br>Dec 23
+        </div>
+      </div>
+
+      <div class="cv-entry">
+        <div class="cv-entry-main">
+          <div class="cv-institution">Chaos</div>
+          <div class="cv-role">Nesin Matematik Köyü</div>
+          <div class="cv-desc">Conditioned stochastic stability of equilibrium measures on repellers</div>
+        </div>
+        <div class="cv-entry-meta">
+          Izmir, TR<br>Sep 23
+        </div>
+      </div>
+
+      <div class="cv-entry">
+        <div class="cv-entry-main">
+          <div class="cv-institution">10 International Congress on Industrial and Applied Mathematics</div>
+          <div class="cv-role">Wasseda University</div>
+          <div class="cv-desc">Noise-induced chaos: a conditioned random dynamics perspective</div>
+        </div>
+        <div class="cv-entry-meta">
+          Tokyo, JPN<br>Aug 23
+        </div>
+      </div>
+
+      <div class="cv-entry">
+        <div class="cv-entry-main">
+          <div class="cv-institution">Seminar on Random Dynamical Systems and Ergodic Theory</div>
+          <div class="cv-role">Imperial College London</div>
+          <div class="cv-desc">Infinite Ergodic theory and intermittency in Iterated Function Systems</div>
+        </div>
+        <div class="cv-entry-meta">
+          London, UK<br>Feb 22, Feb 23, Jan 24
+        </div>
+      </div>
+
+      <div class="cv-entry">
+        <div class="cv-entry-main">
+          <div class="cv-institution">Freie Universität Berlin (invited talk)</div>
+          <div class="cv-desc">Uncovering the <i>n</i>-point motion in stochastic flows</div>
+        </div>
+        <div class="cv-entry-meta">
+          Berlin, DEU<br>Nov 22
+        </div>
+      </div>
+
+      <div class="cv-entry">
+        <div class="cv-entry-main">
+          <div class="cv-institution">7th International Congress on Random Dynamical Systems</div>
+          <div class="cv-role">Institute of Mathematics, VAST</div>
+          <div class="cv-desc">On the nature of non-uniform synchronisation in a random logistic map</div>
+        </div>
+        <div class="cv-entry-meta">
+          Hanoi, VIE<br>Jun 22
+        </div>
+      </div>
+
+      <div class="cv-entry">
+        <div class="cv-entry-main">
+          <div class="cv-institution">Spring retreat - Mathematics of Random Systems</div>
+          <div class="cv-role">Imperial College London - University of Oxford</div>
+          <div class="cv-desc">Degeneracies in (k,n,m)-particle systems and their complexity</div>
+        </div>
+        <div class="cv-entry-meta">
+          Missenden, UK<br>Apr 22
+        </div>
+      </div>
+
+      <div class="cv-entry">
+        <div class="cv-entry-main">
+          <div class="cv-institution">Quasi-Stationary Distributions Workshop</div>
+          <div class="cv-role">Freie Universität Berlin</div>
+          <div class="cv-desc">Ulam's method in action. Approximating invariant measures, QSDs and QEDs</div>
+        </div>
+        <div class="cv-entry-meta">
+          Berlin, DEU<br>Mar 22
+        </div>
+      </div>
+    </div>
+  </details>
+
+</div>
+</body>
+</html>
