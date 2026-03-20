@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  :root {
+    --brand-green: #2a9d68; 
+    --brand-hover: #228155;
+    --rg-blue: #00ccbb; 
+    --text-dark: #1e293b;
+    --text-muted: #64748b;
+    --icon-bg: #f8fafc;
+    --icon-hover: #ffffff;
+    --arxiv-red: #B31B1B
+  }
+
+  body {
+    margin: 0;
+    padding: 15px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+  }
+
+  .profile-card {
+    background: #ffffff;
+    padding: 30px 20px;
+    border-radius: 20px;
+    text-align: center;
+    width: 100%;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+    border: 1px solid #edf2f7;
+    box-sizing: border-box;
+  }
+
+  .contact-btn {
+    display: inline-block;
+    background-color: var(--brand-green);
+    color: white;
+    padding: 14px 45px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 12px rgba(42, 157, 104, 0.2);
+    border: none;
+  }
+
+  .contact-btn:hover {
+    background-color: var(--brand-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(42, 157, 104, 0.3);
+  }
+
+  /* --- UPDATED FLEX LAYOUT --- */
+  .links-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .link-item {
+    width: 130px; /* Gives each item a consistent width to allow wrapping */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    padding: 15px 5px;
+    border-radius: 12px;
+    background: var(--icon-bg);
+    transition: all 0.2s ease;
+    border: 1px solid #f1f5f9;
+    box-sizing: border-box;
+  }
+  /* --------------------------- */
+
+  .link-item:hover {
+    background: var(--icon-hover);
+    border-color: #e2e8f0;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  }
+
+  /* Icon Sizing & Grayscale */
+  .link-item img, .link-item svg {
+    width: 28px;
+    height: 28px;
+    margin-bottom: 8px;
+    filter: grayscale(100%);
+    opacity: 0.6;
+    transition: 0.3s;
+  }
+
+  .link-item:hover img, .link-item:hover svg {
+    filter: grayscale(0%);
+    opacity: 1;
+  }
+
+  .link-label {
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+  }
+
+  /* Specific Hover Color */
+  .link-item.rg:hover .link-label { color: var(--rg-blue); }
+  .link-item.gh:hover .link-label { color: #333; }
+  .link-item.li:hover .link-label { color: #0077b5; }
+  .link-item.gs:hover .link-label { color: #4285f4; }
+  .link-item.ic:hover .link-label { color: #003d71; }
+  .link-item.ax:hober .link-label { color: var(--arxiv-red);}
+</style>
+</head>
+<body>
+
+<div class="profile-card">
+  <div class="links-grid">
+    
+    <a href="https://www.linkedin.com/in/bernatbc/" target="_blank" class="link-item li">
+      <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png">
+      <span class="link-label">LinkedIn</span>
+    </a>
+
+    <a href="https://github.com/Bernat-BC" target="_blank" class="link-item gh">
+      <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png">
+      <span class="link-label">GitHub</span>
+    </a>
+
+    <a href="https://www.researchgate.net/profile/Bernat-Bassols-Cornudella" target="_blank" class="link-item rg">
+      <img src="https://img.icons8.com/?size=100&id=_H27C1YMyU_5&format=png&color=000000">
+      <span class="link-label">ResearchGate</span>
+    </a>
+
+    <a href="https://scholar.google.co.uk/citations?user=F_TdUrMAAAAJ&hl=en" target="_blank" class="link-item gs">
+      <img src="https://img.icons8.com/?size=100&id=pU44R9xgF3wq&format=png&color=000000">
+      <span class="link-label">Google Scholar</span>
+    </a>
+
+    <a href="https://arxiv.org/a/bassolscornudella_b_1.html" target="_blank" class="link-item ax">
+      <img src="logos/arxiv-logo.png">
+      <span class="link-label">arXiv</span>
+    </a>
+
+    <a href="https://profiles.imperial.ac.uk/bernat.bassols-cornudella20" target="_blank" class="link-item ic">
+      <img src="logos/Imperial-logo.png">
+      <span class="link-label">Imperial</span>
+    </a>
+
+  </div>
+</div>
+</body>
+</html>
