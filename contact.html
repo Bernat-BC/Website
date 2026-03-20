@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  :root {
+    /* Exact green from your image */
+    --brand-green: #2a9d68; 
+    --brand-hover: #228155;
+    --text-dark: #2c3e50;
+    --text-light: #5f6c7b;
+  }
+
+  body {
+    margin: 0;
+    padding: 20px;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+  }
+
+  .contact-container {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 16px;
+    text-align: center;
+    width: 100%;
+    /* Clean, subtle shadow for a modern look */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    border: 1px solid #f0f0f0;
+  }
+
+  .title {
+    color: var(--text-dark);
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    font-weight: 600;
+  }
+
+  .description {
+    color: var(--text-light);
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 25px;
+  }
+
+  .email-button {
+    display: inline-block;
+    background-color: var(--brand-green);
+    color: white;
+    padding: 15px 35px;
+    border-radius: 30px; /* Rounded pill shape for a friendly feel */
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+  }
+
+  .email-button:hover {
+    background-color: var(--brand-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(42, 157, 104, 0.3);
+  }
+
+  .email-button:active {
+    transform: translateY(0);
+  }
+</style>
+</head>
+<body>
+
+<div class="contact-container">
+  <div class="title">Contact Me</div>
+  <p class="description">
+    I'm always open to collaborations, research inquiries, or professional networking. <br>
+Feel free to reach out!
+  </p>
+  
+  <a href="mailto:bb420@ic.ac.uk" class="email-button">
+    Send an Email
+  </a>
+</div>
+</body>
+</html>
