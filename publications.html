@@ -39,13 +39,70 @@
     border-bottom: 2px solid #e2e8f0;
     padding-bottom: 0.05in;
     margin-bottom: 0.2in;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
   }
 
-  .cv-section-subtitle {
-    font-size: 14px;
-    text-transform: none;
-    font-weight: normal;
-    color: var(--text-muted);
+  .profile-links {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .profile-link {
+    --profile-color: #64748b;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: transform 0.2s ease, filter 0.2s ease;
+  }
+
+  .profile-link img {
+    display: block;
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+    filter: grayscale(100%);
+    opacity: 0.6;
+    transition: filter 0.2s ease, opacity 0.2s ease;
+  }
+
+  .profile-link:hover,
+  .profile-link:focus-visible {
+    transform: translateY(-2px);
+  }
+
+  .profile-link:hover img,
+  .profile-link:focus-visible img {
+    filter: grayscale(0%) drop-shadow(0 0 5px var(--profile-color));
+    opacity: 1;
+  }
+
+  .profile-link:focus-visible {
+    outline: 2px solid var(--profile-color);
+    outline-offset: 4px;
+  }
+
+  .profile-link.researchgate {
+    --profile-color: #00ccbb;
+  }
+
+  .profile-link.scholar {
+    --profile-color: #4285f4;
+  }
+
+  .profile-link.arxiv {
+    --profile-color: #b31b1b;
+  }
+
+  @media (max-width: 480px) {
+    .cv-section-title {
+      flex-wrap: wrap;
+    }
   }
 
   .cv-pubs {
@@ -83,9 +140,17 @@
 <div class="cv-container">
 
   <div class="cv-section-title">
-    List of Publications 
-    <span class="cv-section-subtitle">
-      (see also my <a href="https://scholar.google.com/citations?hl=en&user=F_TdUrMAAAAJ" target="_blank">Google Scholar</a> profile, my <a href="https://arxiv.org/a/bassolscornudella_b_1.html" target="_blank">arXiv</a>, or my <a href="https://www.researchgate.net/profile/Bernat-Bassols-Cornudella/research" target="_blank">ResearchGate</a> profile)
+    <span>List of Publications</span>
+    <span class="profile-links">
+      <a class="profile-link researchgate" href="https://www.researchgate.net/profile/Bernat-Bassols-Cornudella/research" target="_blank" rel="noopener noreferrer" aria-label="ResearchGate profile" title="ResearchGate">
+        <img src="https://img.icons8.com/?size=100&amp;id=_H27C1YMyU_5&amp;format=png&amp;color=000000" alt="">
+      </a>
+      <a class="profile-link scholar" href="https://scholar.google.com/citations?hl=en&amp;user=F_TdUrMAAAAJ" target="_blank" rel="noopener noreferrer" aria-label="Google Scholar profile" title="Google Scholar">
+        <img src="https://img.icons8.com/?size=100&amp;id=pU44R9xgF3wq&amp;format=png&amp;color=000000" alt="">
+      </a>
+      <a class="profile-link arxiv" href="https://arxiv.org/a/bassolscornudella_b_1.html" target="_blank" rel="noopener noreferrer" aria-label="arXiv profile" title="arXiv">
+        <img src="logos/arxiv-logo.png" alt="">
+      </a>
     </span>
   </div>
 
